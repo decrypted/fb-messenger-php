@@ -1,7 +1,7 @@
 {
-  "name": "pimax/fb-messenger-php",
-  "description": " Facebook Messenger Bot PHP API",
-  "homepage": "https://github.com/pimax/fb-messenger-php",
+  "name": "decrypted/fb-messenger-php",
+  "description": " Facebook Messenger Bot PHP API NG",
+  "homepage": "https://github.com/decrypted/fb-messenger-php",
   "license": "MIT",
   "authors": [
     {

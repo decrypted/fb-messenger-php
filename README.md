@@ -2,6 +2,8 @@ FB Messenger Bot PHP API
 ========================
 
 This is a PHP implementation for Facebook Messenger Bot API.
+Looking to keep it more up to date then https://packagist.org/packages/pimax/fb-messenger-php.
+
 
 REQUIREMENTS
 ------------

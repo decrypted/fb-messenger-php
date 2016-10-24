@@ -14,6 +14,11 @@ class MessageButton
     const TYPE_WEB = "web_url";
 
     /**
+     * Web url button type
+     */
+    const TYPE_WEB_FULL = "web_url_full";
+
+    /**
      * Postback button type
      */
     const TYPE_POSTBACK = "postback";
@@ -90,9 +95,14 @@ class MessageButton
                 $result['payload'] = $this->url;
             break;
 
+            case self::TYPE_WEB_FULL:
+                $result['webview_height_ratio'] = 'full';
             case self::TYPE_WEB:
                 $result['url'] = $this->url;
+                $result['type'] = self::TYPE_WEB;
             break;
+
+
         }
 
         return $result;

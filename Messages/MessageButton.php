@@ -111,7 +111,6 @@ class MessageButton
           
             case self::TYPE_ACCOUNT_LINK:
                 $result['url'] = $this->url;
-                $result['type'] = self::TYPE_WEB;
             break;
 
             case self::TYPE_ACCOUNT_UNLINK:

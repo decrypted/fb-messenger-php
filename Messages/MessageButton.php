@@ -22,6 +22,16 @@ class MessageButton
      * Postback button type
      */
     const TYPE_POSTBACK = "postback";
+    
+    /**
+     * Account link type
+     */
+    const TYPE_ACCOUNT_LINK = "account_link";
+  
+    /**
+     * Account unlink type
+     */
+    const TYPE_ACCOUNT_UNLINK = "account_unlink";
 
     /**
      * Phone number button type
@@ -81,28 +91,32 @@ class MessageButton
     public function getData()
     {
         $result = [
-            'type' => $this->type,
-            'title' => $this->title,
+            'type' => $this->type
         ];
 
         switch($this->type)
         {
-            case self::TYPE_ELEMENT_SHARE:
-                unset($result['title']);
-            break;
             case self::TYPE_PHONE_NUMBER:
             case self::TYPE_POSTBACK:
                 $result['payload'] = $this->url;
+                $result['title'] = $this->title;
             break;
 
             case self::TYPE_WEB_FULL:
                 $result['webview_height_ratio'] = 'full';
             case self::TYPE_WEB:
+              $result['title'] = $this->title;
+              $result['url'] = $this->url;
+            break;
+          
+            case self::TYPE_ACCOUNT_LINK:
                 $result['url'] = $this->url;
                 $result['type'] = self::TYPE_WEB;
             break;
 
-
+            case self::TYPE_ACCOUNT_UNLINK:
+              //only type needed
+            break;
         }
 
         return $result;

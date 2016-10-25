@@ -13,7 +13,7 @@ INSTALLATION
 ------------
 
 ```
-composer require "pimax/fb-messenger-php" "dev-master"
+composer require decrypted/fb-messenger-php
 ```
 
 BASIC USAGE

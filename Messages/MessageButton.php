@@ -104,15 +104,14 @@ class MessageButton
 
             case self::TYPE_WEB_FULL:
                 $result['webview_height_ratio'] = 'full';
+                $result['type'] = self::TYPE_WEB;
             case self::TYPE_WEB:
-              $result['title'] = $this->title;
-              $result['url'] = $this->url;
-            break;
-          
+                $result['title'] = $this->title;
             case self::TYPE_ACCOUNT_LINK:
                 $result['url'] = $this->url;
             break;
-
+          
+            case self::TYPE_ELEMENT_SHARE:
             case self::TYPE_ACCOUNT_UNLINK:
               //only type needed
             break;

@@ -20,6 +20,11 @@ class StructuredMessage extends Message
     const TYPE_GENERIC = "generic";
 
     /**
+     * Structured message generic type
+     */
+    const TYPE_RAW = "raw";
+
+    /**
      * Structured message receipt type
      */
     const TYPE_RECEIPT = "receipt";
@@ -117,6 +122,10 @@ class StructuredMessage extends Message
                 $this->elements = $data['elements'];
             break;
 
+            case self::TYPE_RAW:
+                $this->elements = $data;
+            break;
+
             case self::TYPE_RECEIPT:
                 $this->recipient_name = $data['recipient_name'];
                 $this->order_number = $data['order_number'];
@@ -167,6 +176,10 @@ class StructuredMessage extends Message
                     $result['attachment']['payload']['elements'][] = $btn->getData();
                 }
             break;
+            
+            case self::TYPE_RAW:
+                $result['attachment']['payload'] = $this->elements;
+                break;
 
             case self::TYPE_RECEIPT:
                 $result['attachment']['payload']['recipient_name'] = $this->recipient_name;

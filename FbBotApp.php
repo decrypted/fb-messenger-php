@@ -47,12 +47,14 @@ class FbBotApp
     /**
      * Send Message
      *
-     * @param Message $message
+     * @param Message|array $message
      * @return array
      */
     public function send($message)
     {
-        return $this->call('me/messages', $message->getData());
+        if (!is_array($message))
+            $message = $message->getData();
+        return $this->call('me/messages', $message);
     }
 
     /**

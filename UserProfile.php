@@ -41,6 +41,16 @@ class UserProfile
         return $this->data['gender'];
     }
 
+    public function getLastAdReferral()
+    {
+        return $this->data['last_ad_referral'];
+    }
+
+    public function getPaymentEnabled()
+    {
+        return $this->data['is_payment_enabled'];
+    }
+
     public function getData() {
         return $this->data;
     }

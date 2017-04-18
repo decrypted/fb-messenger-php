@@ -40,4 +40,8 @@ class UserProfile
     {
         return $this->data['gender'];
     }
+
+    public function getData() {
+        return $this->data;
+    }
 }
